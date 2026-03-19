@@ -15,7 +15,7 @@ uk_genai_task_exposure/
 
 ## 1. `eloundou_onet_to_uk_soc/` — Root Exposure Framework
 
-Maps the task-level GenAI exposure scores from Eloundou et al. (2024) — "GPTs are GPTs" — to UK occupational classifications using the Standard Skills Classification (SSC) as a bridge between O\*NET tasks and UK SOC codes. This is the foundational framework on which the SSC-based GAIEI builds.
+Maps the task-level GenAI exposure scores from Eloundou et al. (2024) — "GPTs are GPTs" — to UK occupational classifications using the Standard Skills Classification (SSC) as a bridge between O\*NET tasks and UK SOC codes. This is the foundational framework on which the SSC-based GAISI builds.
 
 **Outputs:** Alpha, beta, gamma, and human-rater exposure indices at 4-digit and 3-digit SOC 2020 and SOC 2010.
 
