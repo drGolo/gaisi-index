@@ -1,0 +1,144 @@
+You are tasked with classifying short justifications that outline why a work activity might or might not be augmented or automated by large language models. You will use the following codebook and principles to guide your classification:
+
+<Codebook>
+# Family (prefix): Direct LLM affordances (POS_)
+Description: Apply these codes when a capability is presented as a direct *positive* benefit. 
+
+
+
+## Tag: TEXT
+Description: The direct creation, editing, or transformation of text and content. 
+Code when…: ...writing, editing, summarising, transcribing, synthesising, or rephrasing text. 
+
+
+
+## Tag: ANALYSE
+Description: The cognitive work of analysing information to generate higher-level outputs. 
+Code when…: … analysing data, identifying trends, generating ideas, evaluating solutions, or offering recommendations. 
+
+
+
+## Tag: PLAN
+Description: The creation, organisation, and management of tasks, plans, and schedules. 
+Code when…: ...developing plans, outlining steps, creating strategies, allocating resources, or managing schedules. 
+
+
+
+## Tag: KNOW
+Description: The retrieval and provision of structured information or reusable assets. 
+Code when…: ...accessing a knowledge base or providing resources like examples, templates, or frameworks. This code is used when LLMs afford access to reusable assets. 
+
+
+
+## Tag: MULTI
+Description: The generation, analysis, or manipulation of visual or non-textual content. 
+Code when…: ...creating images, analysing photos, or using speech-to-text capabilities. 
+
+
+
+# Family (prefix): Human constraints (HUM_)
+Description: The core human skills required for a task that AI cannot replicate. 
+
+
+
+## Tag: EQ
+Description: The need for emotional intelligence, empathy, and interpersonal skills. 
+Code when…: ...building relationships, human interaction, emotional intelligence, or social skills. 
+
+
+
+## Tag: IQ
+Description: The need for human judgment, creativity, or complex strategic thinking. 
+Code when…: ...human judgment, creativity, strategic decision-making, or ethical considerations. 
+
+
+
+## Tag: PHYSICAL
+Description: The need for physical presence, manual dexterity, or sensory perception. 
+Code when…: ...hands-on work, physical presence, or operating tools/machinery. 
+
+
+
+# Family (prefix): Integration potential (INT_)
+Description: How AI could be integrated into existing workflows and toolchains. 
+
+
+
+## Tag: INTEGRATE
+Description: The explicit integration of AI with other software, platforms, or tools. 
+Code when…: ...\"integrated with,\" \"as a plugin for,\" or terms like \"LLM-powered tool\" or \"application.\"
+
+
+
+## Tag: ENHANCE
+Description: The explicit improvement of a process, often in terms of efficiency. 
+Code when…: … process verbs like \"streamline,\" \"enhance,\" \"improve,\" \"facilitate,\" or outcomes like \"reduce time/cost.\" This tag should be applied when there is an explicit mention of process improvement. 
+
+
+
+# Family (prefix): Dis-affordances (DIS_)
+Description: Reasons why an AI's contribution might be limited or not applicable. 
+
+
+
+## Tag: NEG_SIMPLE
+Description: The AI's value is limited because the task is too easy or already solved. 
+Code when…: ...the task is \"straightforward,\" \"simple,\" or \"already well-supported.\" 
+
+
+
+## Tag: NEG_COMPLEX
+Description: The AI's value is limited because the task is too difficult or nuanced. 
+Code when…: ...the task is \"complex\" or requires \"contextual understanding.\" Often applies alongside HUM_IQ or HUM_EQ. 
+
+
+
+## Tag: NEG_LIMITED
+Description: A direct statement is made that the AI's benefit would be minimal. 
+Code when…: ...a \"limited impact,\" \"minimal relevance,\" or that the benefit is \"marginal.\" 
+
+
+
+# Family (prefix): Meta-language ( META_ )
+Description: The linguistic framing of the justification, describing how a claim is made. 
+
+
+
+## Tag: HEDGE
+Description: Language that expresses uncertainty, potential, or conditionality. 
+Code when…: ...words like \"can,\" \"could,\" \"might,\" \"potential,\" or \"likely.\"
+
+
+
+## Tag: CONTRAST
+Description: Language that balances a positive point against a negative one. 
+Code when…: ...words like \"While,\" \"However,\" \"but,\" or \"Despite.\"
+</Codebook>
+
+<Principles>
+-  A code is "family prefix + tag"
+- Apply a code for every distinct concept or activity mentioned in the justification. It is common for a single justification to have multiple codes across different families.
+- If a justification mentions multiple distinct concepts that map to different codes, apply all of them.
+- Affordances vs. Dis-affordances: The POS_ family of codes should only be used when a capability is presented as a positive benefit. If a capability is mentioned in the context of it being limited or irrelevant (e.g., "image processing is not relevant"), it should be coded with a DIS_ tag.
+</Principles>
+
+You will be given a list of justifications wrapped in the <justification> tag 
+
+Analyse each justification text carefully, considering each concept and how it relates to the codebook and principles. 
+Think through the justification, identifying key concepts and how they map to the codebook, before providing your final classification. Consider:
+1. What direct LLM affordances (if any) are mentioned positively?
+2. Are there any human constraints highlighted?
+3. Is there mention of integration potential?
+4. Are any dis-affordances or limitations of AI discussed?
+5. What meta-language is used in framing the justification?
+
+Now, provide your final code assignments. For each code you assign, briefly explain why it applies to the justification. Remember to apply all relevant codes, even if it means assigning multiple codes from different families.
+
+<classification>
+[List the assigned codes; followed by a brief explanation of why they apply to the justification. Use the format:
+
+Justification 1; CODE1, CODE2, CODE3, etc; Explanation
+Justification 2; CODE1, CODE2, CODE4, CODE5, etc; Explanation
+
+Ensure that your explanations directly reference the content of the justification and align with the codebook descriptions.]
+</classification> 

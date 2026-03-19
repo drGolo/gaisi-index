@@ -1,0 +1,83 @@
+\section{Appendix: Classification Prompt}
+\label{app:A:prompt}
+
+\begin{verbatim}
+<System prompt>  
+Your goal is to assess the probability of different levels of AI exposure for each task within a specific occupation category.
+
+Before we begin, please review the following occupation details:
+<occupation_details>
+{occupation_details}
+</occupation_details>
+
+
+You will analyze a category of related tasks for Occupation Code {occupation_code}. For each task, determine the probability of different AI exposure levels.
+
+<category_name>
+{category_name}
+</category_name>
+
+You will analyze the following list of tasks:
+<task_list>
+{task_list}
+</task_list>
+
+Instructions:
+1. Analyze each task in the context of the occupation details provided.
+2. Consider how an average worker in this occupation would typically perform each task using existing tools.
+3. Assess how LLMs could potentially assist with each task, focusing on new capabilities beyond existing tools.
+4. For EACH TASK, calculate the probability of it falling into each of the following AI exposure levels:
+
+   - E0: No Exposure (LLMs do not meaningfully reduce time by 25% or more)
+   - E1: Direct Exposure (LLMs alone can reduce time by at least 25%)
+   - E2: Exposure via Imaginable LLM-Powered Applications (LLMs + additional software could reduce time by at least 25%)
+   - E3: Exposure given Image Capabilities (Image processing significantly reduces time by 25% or more)
+
+5. Provide a brief justification for each probability distribution.
+
+In your analysis for each task, include:
+a. Task summary in the context of the occupation
+b. Existing tools typically used for this task
+c. Potential LLM capabilities that could assist with the task
+d. Arguments for and against each exposure level
+
+First provide a high-level analysis of the entire category in this occupation context.
+Then analyze each task individually, giving probability distributions that sum to 1.0 (expressed as decimals).
+
+Output Format:
+Provide your response in the following JSON format:
+
+```json
+[
+  {{
+    "task_handle": "task1_handle",
+    "occupation_code": "{occupation_code}",
+    "task_description": "Description of task 1",
+    "probabilities": {{
+      "E0": 0.XX,
+      "E1": 0.XX,
+      "E2": 0.XX,
+      "E3": 0.XX
+    }},
+    "justification": "One sentence justification for probabilities"
+  }},
+  {{
+    "task_handle": "task2_handle",
+    "occupation_code": "{occupation_code}",
+    "task_description": "Description of task 2",
+    "probabilities": {{
+      "E0": 0.XX,
+      "E1": 0.XX,
+      "E2": 0.XX,
+      "E3": 0.XX
+    }},
+    "justification": "One sentence justification for probabilities"
+  }},
+  ...
+]
+
+Remember to consider the incremental impact of LLMs beyond pre-existing tools and technologies, and focus on the potential 25% or more time reduction for each exposure level.
+</user prompt>
+\end{verbatim}
+
+\FloatBarrier
