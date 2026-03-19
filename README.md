@@ -23,7 +23,7 @@ Maps the task-level GenAI exposure scores from Eloundou et al. (2024) — "GPTs 
 
 ## 2. `gaisi_ses_based/` — GAISI: Skills and Employment Survey (SES) Based
 
-Constructs the **Generative AI Exposure Index (GAIEI)** using task-level LLM exposure classifications weighted by task importance scores from the UK Skills and Employment Survey (SES 2017, 2024). Uses Gemini 1.5 Pro and GPT-4o for independent multi-run classification with probabilistic exposure estimates (E0/E1/E2/E3).
+Constructs the **Generative AI Susceptibility Index (GAISI)** using task-level LLM exposure classifications weighted by task importance scores from the UK Skills and Employment Survey (SES 2017, 2024). Uses Gemini 1.5 Pro and GPT-4o for independent multi-run classification with probabilistic exposure estimates (E0/E1/E2/E3).
 
 **Outputs:** Task-level exposure probabilities; GAISI indices at 2/3/4-digit SOC 2020 and SOC 2010.
 
@@ -31,7 +31,7 @@ Constructs the **Generative AI Exposure Index (GAIEI)** using task-level LLM exp
 
 ## 3. `gaiei_ssc_based/` — GAISI: Standard Skills Classification (SSC) Based
 
-Constructs the GAISI using the UK SSC task framework directly. SSC unit group tasks are classified by Gemini 2.5 Pro with a three-stage pipeline (classification → critic review → adjudication). Unlike the SES-based measure, this uses the open SSC task descriptions.
+Constructs the GAISI using the UK SSC task framework. SSC unit group tasks are classified by Gemini 2.5 Pro with a three-stage pipeline (classification → critic review → adjudication). Unlike the SES-based measure, this uses the SSC task descriptions [https://www.gov.uk/government/publications/uk-standard-skills-classification-interim-development-report/the-uk-standard-skills-classification](https://www.gov.uk/government/publications/uk-standard-skills-classification-interim-development-report/the-uk-standard-skills-classification).
 
 **Outputs:** Task-level E0/E1/E2/E3 probabilities for ~40,300 sub-unit group-job task combinations.
 
